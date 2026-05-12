@@ -1,0 +1,509 @@
+<!doctype html>
+<html class="font-sans" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Karla:ital,wght@0,200..800;1,200..800&family=Kumbh+Sans:wght,YOPQ@100..900,300&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Frontend Mentor | Body Mass Index Calculator</title>
+  </head>
+  <body class="font-worksans pb-24">
+    <!-- header SECTION   "Body mass index calculator"-->
+
+    <header
+      class="bg-gradient-to-r from-white to-blue-100 h-[45rem] rounded-br-[50px] pt-20 xl:w-[80%]"
+    >
+      <a href="index.html">
+        <img
+          class="mx-auto xl:ml-40 mt-5"
+          src="./assets/images/logo.svg"
+          alt="img"
+        />
+      </a>
+      <h1
+        class="text-4xl sm:text-6xl lg:text-7xl font-semibold mt-5 max-w-2xl px-4 text-center xl:text-left xl:max-w-[38%] ml-[10%]"
+      >
+        Body Mass Index Calculator
+      </h1>
+      <p
+        class="text-lg text-center w-[22rem] mt-6 mx-auto text-slate-500 font-normal sm:w-[35rem] xl:ml-[10rem] xl:text-start"
+      >
+        Better understand your weight in relation to your height using our body
+        mass index (BM) calculatot. While BMI is not the sole determinant of a
+        healthy weight, it offers a valuable starting point to evaluate your
+        overall health and well-being.
+      </p>
+    </header>
+
+    <!-- Enter your details below SECTION -->
+
+    <section
+      id="Enter_your_details_below"
+      class="w-[22rem] min-h-96 rounded-2xl bg-white shadow-[0_10px_30px_rgba(0,0,0,0.2)] py-8 px-14 mx-auto -mt-40 sm:w-[40rem] sm:min-h-[30rem] xl:-mt-[35rem] xl:translate-x-[60%] xl:min-h-[30rem]"
+    >
+      <h2 class="text-[1.3rem] font-bold">Enter your details below</h2>
+      <form action="#" class="mt-5 flex gap-2">
+        <input
+          type="radio"
+          id="html"
+          name="fav_language"
+          value="HTML"
+          checked
+          class="metric"
+        />
+        <label for="html" class="font-medium">Metric</label>
+        <input
+          id="css"
+          type="radio"
+          name="fav_language"
+          value="Imperial"
+          class="ml-20 sm:ml-80 xl:ml-56"
+        />
+
+        <label for="css" class="font-medium">Imperial</label>
+      </form>
+
+      <div id="BMI_counter" class="flex flex-col sm:flex-row gap-5">
+        <div id="height">
+          <h3 class="mt-5 font-light text-sm">Height</h3>
+          <div
+            id="CM"
+            class="border border-black rounded-md flex gap-40 px-6 py-4 mt-2 h-14"
+          >
+            <input
+              id="SM_number"
+              type="number"
+              placeholder="0"
+              class="font-bold outline-none w-10 text-black placeholder-black"
+            />
+
+            <h5 class="text-blue-600 font-bold -ml-8">cm</h5>
+          </div>
+        </div>
+
+        <div id="weight" class="sm:mt-5">
+          <h3 class="font-light text-sm">Weight</h3>
+          <div
+            id="KG"
+            class="border border-black rounded-md flex items-center justify-between px-6 py-4 mt-2 sm:w-60"
+          >
+            <input
+              id="KG_number"
+              type="number"
+              placeholder="0"
+              class="font-bold outline-none w-10 text-black placeholder-black"
+            />
+            <h5 class="text-blue-600 font-bold">kg</h5>
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="welcome"
+        class="bg-[#0074e0] mt-5 pl-6 py-4 rounded-lg sm:rounded-r-full"
+      >
+        <h2 id="BMI_Result" class="text-white text-xl font-bold">Welcome!</h2>
+        <p id="BMI_info" class="text-white text-[15px] mt-3">
+          Enter your height and weight and you'll see your BMI result here
+        </p>
+      </div>
+
+      <!-- IMPERIAL division -->
+
+      <div id="imperial" class="hidden xl:relative -mt-80">
+        <div id="height">
+          <h3 class="mt-5 font-light text-sm">Height</h3>
+          <div
+            id="ftANDin"
+            class="flex flex-col gap-5 sm:flex sm:flex-row xl:flex xl:gap-10"
+          >
+            <div
+              id="ft"
+              class="border border-black rounded-md flex gap-40 px-6 py-4 mt-2 h-14"
+            >
+              <input
+                id="height_ft"
+                type="number"
+                placeholder="0"
+                class="font-bold outline-none w-10 text-black placeholder-black"
+              />
+
+              <h5 class="text-blue-600 font-bold -ml-8">ft</h5>
+            </div>
+
+            <div
+              id="in"
+              class="border border-black rounded-md flex gap-40 px-6 py-4 mt-2 h-14"
+            >
+              <input
+                id="height_in"
+                type="number"
+                placeholder="0"
+                class="font-bold outline-none w-10 text-black placeholder-black"
+              />
+
+              <h5 class="text-blue-600 font-bold -ml-8">in</h5>
+            </div>
+          </div>
+        </div>
+
+        <div id="weight" class="sm:mt-5">
+          <h3 class="font-light text-sm">Weight</h3>
+          <div
+            id="stANDlbs"
+            class="flex flex-col gap-5 sm:flex sm:flex-row xl:flex xl:gap-10"
+          >
+            <div
+              id="st"
+              class="border border-black rounded-md flex gap-40 px-6 py-4 mt-2 h-14"
+            >
+              <input
+                id="weight_st"
+                type="number"
+                placeholder="0"
+                class="font-bold outline-none w-10 text-black placeholder-black"
+              />
+
+              <h5 class="text-blue-600 font-bold -ml-8">st</h5>
+            </div>
+
+            <div
+              id="lbs"
+              class="border border-black rounded-md flex gap-40 px-6 py-4 mt-2 h-14"
+            >
+              <input
+                id="weight_lbs"
+                type="number"
+                placeholder="0"
+                class="font-bold outline-none w-10 text-black placeholder-black"
+              />
+
+              <h5 class="text-blue-600 font-bold -ml-8">lbs</h5>
+            </div>
+          </div>
+        </div>
+        <div
+          id="welcome_imperial"
+          class="bg-[#0074e0] mt-5 pl-6 py-4 rounded-lg sm:rounded-r-full"
+        >
+          <h2 id="BMI_Result2" class="text-white text-xl font-bold">
+            Welcome!
+          </h2>
+          <p id="BMI_info2" class="text-white text-[15px] mt-3">
+            Enter your height and weight and you'll see your BMI result here
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!--  SECTION "What your BMI result means" -->
+
+    <section
+      id="what_your_BMI_result_means"
+      class="mt-10 sm:flex gap-10 xl:mt-80 xl:ml-60 xl:gap-28"
+    >
+      <img
+        class="w-[30rem] sm:w-[40%]"
+        src="./assets/images/image-man-eating.webp"
+        alt="img"
+      />
+
+      <div id="headerANDtext" class="mt-10 ml-7">
+        <h2
+          class="text-3xl font-semibold w-[20rem] xl:mt-20 xl:text-5xl xl:w-[30rem]"
+        >
+          What your BMI result means
+        </h2>
+        <p class="w-[20rem] mt-10 text-slate-500">
+          A BMI range of 18.5 to 24.9 is conidered a 'healthy weight'.
+          Maintaining a healthy weight may lower your chances of experiencing
+          health issues later on, such as obesity and type 2 diabetes. Aim fir a
+          nutrutions diet wuth redused fat and sugar content, incorporating
+          ample fruits and vegetables. Aditionaly, strive for regular physical
+          activity, ideally about 30 minutes daily fir five days a week.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION HealthyEating_RegularExercise_AdecuateSleep -->
+
+    <section
+      id="HealthyEating_RegularExercise_AdecuateSleep"
+      class="bg-gradient-to-r from-white to-gray-100 mt-20 w-[23.4rem] min-h-20 pt-14 flex flex-col gap-10 pl-10 pb-20 sm:w-[100%] xl:flex-row"
+    >
+      <div id="Healthy_eating" class="sm:flex gap-16">
+        <img src="./assets/images/icon-eating.svg" alt="img" />
+        <div id="text">
+          <h2 class="mt-5 font-semibold text-xl">Healthy eating</h2>
+          <p class="w-80 text-base text-slate-500 mt-5 sm:w-[90%]">
+            Healthy eating promotes weight control, disease prevention, better
+            digestion, immunity, mental clarity, and mood.
+          </p>
+        </div>
+      </div>
+
+      <div id="Regular_exercise" class="sm:flex gap-16">
+        <img src="./assets/images/icon-exercise.svg" alt="img" />
+        <div id="tex">
+          <h2 class="mt-5 font-semibold text-lg">Regular exercise</h2>
+          <p class="w-80 text-base text-slate-500 mt-5 sm:w-[90%]">
+            Exercise improves fitness, aids weight control, elevates mood,and
+            reduces disase risk, fostering wellness and longevity.
+          </p>
+        </div>
+      </div>
+
+      <div id="Adecuate_sleep" class="sm:flex gap-16">
+        <img src="./assets/images/icon-sleep.svg" alt="img" />
+        <div id="text">
+          <h2 class="mt-5 font-semibold text-lg">Adecuate sleep</h2>
+          <p class="w-80 text-base text-slate-500 mt-5 sm:w-[90%]">
+            Sleep enhances mental clarity, emotional stability, and physical
+            wellness, promoting overall restoration and rejuvenation.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION Limitations_of_BMI -->
+
+    <section
+      id="Limitations_of_BMI"
+      class="mt-20 grid grid-cols-1 xl:grid-cols-2 gap-6"
+    >
+      <div id="TitleANDText" class="">
+        <h2 class="text-4xl font-semibold w-[20rem] text-center mx-auto">
+          Limitations of BMI
+        </h2>
+        <p
+          class="mt-10 text-slate-500 text-center mx-auto w-[20rem] sm:w-[90%] xl:text-left xl:ml-[35%] xl:w-[50%]"
+        >
+          Although BMI is often a practical indicator of helthy weight, it is
+          not suited of every person. Specific groups should carefully consider
+          their BMI outcomes, and in cartein cases, the measurement may not be
+          beneficial to use.
+        </p>
+      </div>
+      <!-- <div id="all_blocks" class="xl: gap-6"> -->
+      <div
+        id="Gender"
+        class="box-border w-[22rem] p-6 border border-white shadow-[0_10px_70px_rgba(0,0,0,0.2)] rounded-xl mt-10 mx-auto xl:-ml-16"
+      >
+        <div id="ImgANDTitle" class="flex gap-5">
+          <img src="./assets/images/icon-gender.svg" alt="img" />
+          <h2 class="font-semibold">Gender</h2>
+        </div>
+        <p class="text-base text-slate-600 mt-5">
+          The development and body fat composition of girls and boys vary with
+          age. Consecuantly, a child's age and gender are considered ehen
+          evaluating their BMI.
+        </p>
+      </div>
+
+      <div
+        class="xl:grid grid-cols-1 xl:grid-cols-3 gap-96 items-start xl:ml-38"
+      >
+        <div id="IMG_patern_right" class="hidden xl:block xl:ml-52 xl:w-[550%]">
+          <img src="./assets/images/pattern-curved-line-right.svg" alt="img" />
+        </div>
+
+        <div
+          id="Age"
+          class="box-border w-[22rem] p-6 border border-white shadow-[0_10px_70px_rgba(0,0,0,0.2)] rounded-xl mt-10 mx-auto"
+        >
+          <div id="ImgANDTitle" class="flex gap-5">
+            <img src="./assets/images/icon-age.svg" alt="img" />
+            <h2 class="font-semibold">Age</h2>
+          </div>
+          <p class="text-base text-slate-600 mt-5">
+            In aging individuals, increased body fat and muscle loss may cause
+            BMI to understimate body fat content.
+          </p>
+        </div>
+
+        <div
+          id="Muscle"
+          class="box-border w-[22rem] mx-auto mt-10 p-6 border border-white shadow-[0_10px_70px_rgba(0,0,0,0.2)] rounded-xl"
+        >
+          <div id="ImgANDTitle" class="flex gap-5">
+            <img src="./assets/images/icon-muscle.svg" alt="img" />
+            <h2 class="font-semibold">Muscle</h2>
+          </div>
+          <p class="text-[0.950rem] text-slate-600 mt-5">
+            BMI may misclasify muscular individuals as overweight or obese,as it
+            doesn't differentiate muscle from fat.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 xl:grid-cols-8 gap-10 xl:mt-52 xl:-ml-96">
+        <div
+          id="Pregnancy"
+          class="box-border w-[22rem] p-6 border border-white shadow-[0_10px_70px_rgba(0,0,0,0.2)] rounded-xl mx-auto mt-10"
+        >
+          <div id="ImgANDTitle" class="flex gap-5">
+            <img src="./assets/images/icon-pregnancy.svg" alt="img" />
+            <h2 class="font-semibold">Pregnancy</h2>
+          </div>
+          <p class="text-base text-slate-600 mt-5">
+            Expectant mothers experience weight gain due to their growing baby.
+            Maintaining a healthy pre-pregnancy BMI is advisable to minimise
+            health risk for both mother and child.
+          </p>
+        </div>
+
+        <div
+          id="Race"
+          class="box-border w-[22rem] p-6 border border-white shadow-[0_10px_70px_rgba(0,0,0,0.2)] rounded-xl mx-auto mt-10 md:ml-56"
+        >
+          <div id="ImgANDTitle" class="flex gap-5">
+            <img src="./assets/images/icon-race.svg" alt="img" />
+            <h2 class="font-semibold">Race</h2>
+          </div>
+          <p class="text-base text-slate-600 mt-5">
+            Certain health concern may affect individuals of some Black and
+            Asian origins at lower BMIs than others. To learn more, it is
+            advised to disscuss this with your GP or practicle nurse.
+          </p>
+        </div>
+      </div>
+    </section>
+  </body>
+
+  <script>
+    const heightInput = document.getElementById("SM_number");
+    const weightInput = document.getElementById("KG_number");
+    const resultText = document.getElementById("BMI_Result");
+    const infoText = document.getElementById("BMI_info");
+
+    function calculateBMI() {
+      const height = parseFloat(heightInput.value);
+      const weight = parseFloat(weightInput.value);
+
+      if (!height || !weight) {
+        resultText.textContent = "Welcome!";
+        infoText.textContent =
+          "Enter your height and weight and you'll see your BMI result here";
+        return;
+      }
+
+      const heightInMeters = height / 100;
+      const bmi = weight / (heightInMeters * heightInMeters);
+
+      let status = "";
+
+      if (bmi < 18.5) status = "Underweight";
+      else if (bmi < 25) status = "Healthy weight";
+      else if (bmi < 30) status = "Overweight";
+      else status = "Obese";
+
+      // იდეალური BMI დიაპაზონი
+      const minHealthyWeight = 18.5 * heightInMeters * heightInMeters;
+      const maxHealthyWeight = 24.9 * heightInMeters * heightInMeters;
+
+      resultText.textContent = `Your BMI: ${bmi.toFixed(1)}`;
+
+      infoText.textContent = `
+You are: ${status}.
+Healthy weight range for your height: ${minHealthyWeight.toFixed(
+        1,
+      )} kg - ${maxHealthyWeight.toFixed(1)} kg.
+`;
+    }
+
+    heightInput.addEventListener("input", calculateBMI);
+    weightInput.addEventListener("input", calculateBMI);
+
+    // imperial_radio_btn
+
+    let imperialRadio = document.querySelector("#css");
+    let metricRadio = document.querySelector("#html");
+
+    let imperial = document.querySelector("#imperial");
+    let metric = document.querySelector("#BMI_counter");
+
+    let Welcome = document.querySelector("#welcome");
+
+    imperialRadio.addEventListener("change", () => {
+      if (imperialRadio.checked) {
+        imperial.classList.remove("hidden");
+        metric.classList.add("hidden");
+        Welcome.style.marginTop = "200px";
+        Welcome.style.visibility = "hidden";
+      }
+    });
+
+    metricRadio.addEventListener("change", () => {
+      if (metricRadio.checked) {
+        metric.classList.remove("hidden");
+        imperial.classList.add("hidden");
+        Welcome.style.marginTop = "50px";
+        Welcome.style.visibility = "visible";
+      }
+    });
+
+    // IMPERIAL BMI
+
+    const ftInput = document.getElementById("height_ft");
+    const inInput = document.getElementById("height_in");
+    const stInput = document.getElementById("weight_st");
+    const lbsInput = document.getElementById("weight_lbs");
+
+    const result = document.getElementById("BMI_Result2");
+    const info = document.getElementById("BMI_info2");
+
+    function calculateImperialBMI() {
+      const ft = parseFloat(ftInput.value) || 0;
+      const inch = parseFloat(inInput.value) || 0;
+      const st = parseFloat(stInput.value) || 0;
+      const lbs = parseFloat(lbsInput.value) || 0;
+
+      const heightInches = ft * 12 + inch;
+      const weightPounds = st * 14 + lbs;
+
+      if (!heightInches || !weightPounds) {
+        result.textContent = "Welcome!";
+        info.textContent =
+          "Enter your height and weight and you'll see your BMI result here";
+        return;
+      }
+
+      // BMI formula for imperial
+      const bmi = (weightPounds / (heightInches * heightInches)) * 703;
+
+      let status = "";
+
+      if (bmi < 18.5) status = "Underweight";
+      else if (bmi < 25) status = "Healthy weight";
+      else if (bmi < 30) status = "Overweight";
+      else status = "Obese";
+
+      result.textContent = `Your BMI: ${bmi.toFixed(1)}`;
+      info.textContent = `You are: ${status}`;
+    }
+
+    // live update
+    [ftInput, inInput, stInput, lbsInput].forEach((el) => {
+      el.addEventListener("input", calculateImperialBMI);
+    });
+  </script>
+</html>
